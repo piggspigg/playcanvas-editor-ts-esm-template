@@ -11,7 +11,7 @@ This template demonstrates a working TypeScript + ESM workflow compatible with P
 - Added a post-build step to rename emitted files from `.js` to `.mjs` (including sourcemaps)
 - Converted the sample `helloWorld` script to a **PlayCanvas ESM Script**
 
-Original repository: `https://github.com/playcanvas/playcanvas-editor-ts-template`
+Original repository: [playcanvas-editor-ts-template][playcanvas-editor-ts-template]
 
 **Important**: Please follow the installation instructions from the original README (included below).
 
@@ -49,6 +49,7 @@ Please note, if you are adding new `pc.ScriptTypes` or attributes to existing on
 | `npm run watch-push:debug`   | Performs `watch:debug` and `push` npm scripts                                                |
 | `npm run watch-push:release` | Performs `watch:release` and `push` npm scripts                                              |
 
+[playcanvas-editor-ts-template]: https://github.com/playcanvas/playcanvas-editor-ts-template
 [playcanvas-sync]: https://github.com/playcanvas/playcanvas-sync
 [playcanvas-sync-pcconfig-instructions]: https://github.com/playcanvas/playcanvas-sync#config-variables
 [playcanvas-sync-new-script-types]: https://github.com/playcanvas/playcanvas-sync#adding-new-files-as-script-components
