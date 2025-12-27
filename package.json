@@ -1,0 +1,42 @@
+{
+  "name": "playcanvas-editor-ts-esm-template",
+  "version": "1.0",
+  "author": "Piggspigg <piggspigg@github.com>",
+  "homepage": "https://playcanvas.com",
+  "description": "An ESM extension to the official TypeScript template for PlayCanvas that can also sync with your playcanvas.com project",
+  "keywords": [
+    "typescript",
+    "3D",
+    "2D",
+    "VR",
+    "WebGL",
+    "WebGL2",
+    "game",
+    "engine",
+    "HTML5",
+    "browser",
+    "typings"
+  ],
+  "scripts": {
+    "postbuild:esm": "node scripts/js2mjs.js",
+    "postbuild-push:esm": "npm --silent run postbuild:esm && npm --silent run push",
+    "build:debug": "tsc --project tsconfig.debug.json && npm --silent run postbuild:esm",
+    "build:release": "tsc --project tsconfig.release.json && npm --silent run postbuild:esm",
+    "watch:debug": "tsc --watch --project tsconfig.debug.json",
+    "watch:release": "tsc --watch --project tsconfig.release.json",
+    "push": "node node_modules/playcanvas-sync/bin/pcsync.js pushAll --yes --ext mjs",
+    "build-push:debug": "npm --silent run build:debug && npm --silent run push",
+    "build-push:release": "npm --silent run build:release && npm --silent run push",
+    "watch-push:debug": "npm --silent run build:debug && tsc-watch -p tsconfig.debug.json --onSuccess \"npm --silent run postbuild-push:esm\"",
+    "watch-push:release": "npm --silent run build:release && tsc-watch -p tsconfig.release.json --onSuccess \"npm --silent run postbuild-push:esm\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "playcanvas": "^2.14.3",
+    "playcanvas-sync": "git+https://github.com/playcanvas/playcanvas-sync.git",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "tsc-watch": "^6.2.0"
+  }
+}
